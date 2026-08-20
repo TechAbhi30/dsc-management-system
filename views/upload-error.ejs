@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Error | DSC Monitoring</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #f4f7fb;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-strip {
+            height: 10px;
+            background: #1f5d99;
+        }
+
+        .header {
+            background: white;
+            padding: 18px 50px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            height: 75px;
+        }
+
+        .organization {
+            text-align: center;
+        }
+
+        .organization h5 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .organization h6 {
+            margin: 2px 0;
+            font-weight: 600;
+        }
+
+        .tagline {
+            font-weight: 700;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        .error-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .error-card {
+            background: white;
+            width: 100%;
+            max-width: 650px;
+            border-radius: 12px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .error-icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #fff3cd;
+            color: #d39e00;
+
+            font-size: 38px;
+        }
+
+        .error-card h2 {
+            color: #183b61;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .error-message {
+            background: #f8f9fa;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #555;
+            text-align: left;
+        }
+
+        .required-box {
+            background: #eef5fc;
+            border-left: 4px solid #1f5d99;
+            padding: 15px 18px;
+            text-align: left;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .required-box strong {
+            color: #1f5d99;
+        }
+
+        .back-btn {
+            background: #1f5d99;
+            color: white;
+            border: none;
+            padding: 11px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 25px;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #174a7a;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #1f5d99;
+            color: white;
+            font-size: 13px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="top-strip"></div>
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <div class="header-content">
+
+            <img src="/images/logo.png"
+                alt="CWC Logo"
+                class="logo">
+
+            <div class="organization">
+
+                <h5>केंद्रीय भंडारण निगम</h5>
+                <h5>Central Warehousing Corporation</h5>
+
+                <h6>(भारत सरकार का नवरत्न उपक्रम)</h6>
+
+                <h5>A Navratna CPSE</h5>
+
+                <small>
+                    Under the Ministry of Consumer Affairs,
+                    Food and Public Distribution.
+                </small>
+
+            </div>
+
+            <div class="tagline">
+                Warehousing For Everyone
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ERROR -->
+    <div class="error-container">
+
+        <div class="error-card">
+
+            <div class="error-icon">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+            </div>
+
+            <h2>Excel Upload Failed</h2>
+
+            <p class="text-muted">
+                The uploaded Excel file could not be processed.
+            </p>
+
+            <div class="error-message">
+                <strong>Reason:</strong><br>
+                <%= error %>
+            </div>
+
+            <div class="required-box">
+
+                <strong>
+                    <i class="bi bi-file-earmark-spreadsheet"></i>
+                    Required Excel Columns
+                </strong>
+
+                <p class="mb-0 mt-2">
+                    Employee ID, Employee Name, Email, Department,
+                    Designation, DSC Valid From, DSC Expiry Date
+                </p>
+
+            </div>
+
+            <a href="/" class="back-btn">
+                <i class="bi bi-arrow-left"></i>
+                Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        Digital Signature Certificate Monitoring System
+    </div>
+
+</body>
+
+</html>
